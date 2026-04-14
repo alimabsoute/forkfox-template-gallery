@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ForkFox Template Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:Inter,sans-serif;min-height:100vh}
+.nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:.6rem}
+.nav-logo{width:30px;height:30px;border-radius:7px;background:#FA2A52;display:flex;align-items:center;justify-content:center;font-family:Geologica,sans-serif;font-size:.7rem;font-weight:900;color:#fff}
+.nav-name{font-family:Geologica,sans-serif;font-size:1.05rem;font-weight:800}
+.fox{color:#F97316}
+.nav-label{font-size:.72rem;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.tabs-bar{padding:1.5rem 2rem 0;display:flex;gap:.5rem}
+.tab-btn{padding:.6rem 1.4rem;border-radius:8px 8px 0 0;border:1px solid rgba(255,255,255,.06);border-bottom:none;background:transparent;color:rgba(255,255,255,.35);font-family:Inter,sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s}
+.tab-btn.active{background:rgba(250,42,82,.1);color:#FA2A52;border-color:rgba(250,42,82,.2)}
+.tab-btn:not(.active):hover{color:rgba(255,255,255,.6)}
+.tab-count{margin-left:.4rem;padding:.1rem .4rem;border-radius:4px;background:rgba(255,255,255,.07);font-size:.62rem;color:rgba(255,255,255,.3)}
+.tab-btn.active .tab-count{background:rgba(250,42,82,.15);color:#FA2A52}
+.tab-panel{display:none;padding:1.5rem 2rem 3rem}
+.tab-panel.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.thumb{cursor:pointer;border-radius:10px;overflow:hidden;border:1.5px solid rgba(255,255,255,.07);transition:all .25s;background:#111}
+.thumb:hover{border-color:#FA2A52;transform:translateY(-3px);box-shadow:0 12px 36px rgba(250,42,82,.18)}
+.thumb-wrap{width:100%;position:relative;overflow:hidden;background:#0d0d0d}
+.thumb-wrap::before{content:'';display:block;padding-top:65%}
+.thumb-wrap iframe{position:absolute;top:0;left:0;width:1280px;height:830px;transform:scale(0.195);transform-origin:top left;pointer-events:none;border:none}
+.thumb-label{padding:.5rem .75rem;background:#0e0e0e;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between}
+.thumb-num{font-size:.63rem;font-weight:700;color:rgba(255,255,255,.35);font-family:Geologica,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:65%}
+.thumb-type{font-size:.56rem;color:rgba(255,255,255,.18);letter-spacing:.03em;text-transform:uppercase;flex-shrink:0}
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:1.5rem}
+.lightbox.open{display:flex}
+.lb-inner{width:100%;max-width:1320px;height:92vh;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 40px 100px rgba(0,0,0,.8);display:flex;flex-direction:column}
+.lb-bar{background:rgba(10,10,10,.97);border-bottom:1px solid rgba(255,255,255,.07);padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.lb-title{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.65);font-family:Geologica,sans-serif}
+.lb-actions{display:flex;align-items:center;gap:.75rem}
+.lb-open{font-size:.72rem;color:#FA2A52;text-decoration:none;font-weight:600;padding:.28rem .65rem;border:1px solid rgba(250,42,82,.3);border-radius:6px;transition:all .2s}
+.lb-open:hover{background:rgba(250,42,82,.1)}
+.lb-close{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);border:none;color:#fff;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lb-close:hover{background:rgba(255,255,255,.2)}
+.lb-inner iframe{flex:1;border:none;width:100%}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-brand">
+    <div class="nav-logo">FF</div>
+    <span class="nav-name">Fork<span class="fox">Fox</span></span>
+  </div>
+  <span class="nav-label">Template Gallery &mdash; 100 Designs</span>
+</nav>
+<div class="tabs-bar">
+  <button class="tab-btn active" id="btn-dish" onclick="switchTab('dish')">The Dish <span class="tab-count">50</span></button>
+  <button class="tab-btn" id="btn-carte" onclick="switchTab('carte')">Carte <span class="tab-count">50</span></button>
+</div>
+<div id="tab-dish" class="tab-panel active"><div class="grid" id="grid-dish"></div></div>
+<div id="tab-carte" class="tab-panel"><div class="grid" id="grid-carte"></div></div>
+<div class="lightbox" id="lightbox">
+  <div class="lb-inner">
+    <div class="lb-bar">
+      <span class="lb-title" id="lb-title"></span>
+      <div class="lb-actions">
+        <a class="lb-open" id="lb-link" href="#" target="_blank">Open in tab &#8599;</a>
+        <button class="lb-close" onclick="closeLightbox()">&#215;</button>
+      </div>
+    </div>
+    <iframe id="lb-frame" src="about:blank"></iframe>
+  </div>
+</div>
+<script>
+var DA=['Magazine Hero','Split Hero','Minimal Editorial','Card Stack','Newspaper','Photo Essay','Score-Led','Cinematic','Classic Blog','Data-Rich'];
+var CA=['Classic Sidebar','Reverse Sidebar','Full-width Stacked','Score Hero','Ranked Table','Card Grid','Neighborhood','Encyclopedia','Review Aggregate','Local Guide Mag'];
+var TR=['Dark','Light','Warm Dark','Cool Dark','Bold Accent'];
+
+function buildGrid(type, archetypes) {
+  var g = document.getElementById('grid-' + type);
+  for (var i = 1; i <= 50; i++) {
+    var arc = archetypes[Math.floor((i-1)/5)];
+    var tr = TR[(i-1) % 5];
+    var path = type + '/' + i + '.html';
+    var d = document.createElement('div');
+    d.className = 'thumb';
+    d.dataset.src = path;
+    d.dataset.title = '#' + i + ' \u2014 ' + arc + ' (' + tr + ')';
+    var wrap = document.createElement('div');
+    wrap.className = 'thumb-wrap';
+    var fr = document.createElement('iframe');
+    fr.src = path;
+    fr.loading = 'lazy';
+    wrap.appendChild(fr);
+    var lbl = document.createElement('div');
+    lbl.className = 'thumb-label';
+    var n = document.createElement('span');
+    n.className = 'thumb-num';
+    n.textContent = '#' + i + ' ' + arc;
+    var t = document.createElement('span');
+    t.className = 'thumb-type';
+    t.textContent = tr;
+    lbl.appendChild(n);
+    lbl.appendChild(t);
+    d.appendChild(wrap);
+    d.appendChild(lbl);
+    (function(p, title) {
+      d.addEventListener('click', function() { openLightbox(p, title); });
+    })(path, d.dataset.title);
+    g.appendChild(d);
+  }
+}
+
+buildGrid('dish', DA);
+buildGrid('carte', CA);
+
+function switchTab(tab) {
+  ['dish','carte'].forEach(function(t) {
+    document.getElementById('tab-' + t).classList.remove('active');
+    document.getElementById('btn-' + t).classList.remove('active');
+  });
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.getElementById('btn-' + tab).classList.add('active');
+}
+
+function openLightbox(src, title) {
+  document.getElementById('lb-frame').src = src;
+  document.getElementById('lb-title').textContent = title;
+  document.getElementById('lb-link').href = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lb-frame').src = 'about:blank';
+  document.body.style.overflow = '';
+}
+
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>
