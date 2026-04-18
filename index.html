@@ -33,7 +33,7 @@ body{background:#0a0a0a;color:#fff;font-family:Inter,sans-serif;min-height:100vh
 .pthumb-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .pthumb-template{font-size:.58rem;color:#FA2A52;background:rgba(250,42,82,.1);border:1px solid rgba(250,42,82,.25);padding:2px 7px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;font-family:monospace}
 .pthumb-status{font-size:.58rem;color:#F97316;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.25);padding:2px 7px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;font-family:monospace}
-.pthumb-status.ready{color:#34d399;background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.25)}
+.pthumb-status.ready,.pthumb-status.final{color:#34d399;background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.35)}
 .pthumb-title{font-family:'Geologica',sans-serif;font-weight:700;font-size:.85rem;color:#fff;line-height:1.3}
 .pthumb-title em{font-style:normal;color:#FA2A52}
 .pthumb-desc{font-size:.72rem;color:rgba(255,255,255,.45);line-height:1.5}
@@ -134,7 +134,7 @@ buildGrid('dish', DA);
 buildGrid('carte', CA);
 
 var PRODUCTION = [
-  {slug:'the-dish-v1',title:'The Dish \u2014 v1',titleEm:'launch explainer',template:'T1 Editorial',status:'Draft',desc:'ForkFox\'s launch post, editorial shell. 65/35 content-right, drop cap, sidebar ToC + author.',visual:'Hero AI: overhead dinner table, iPhone + plate, dark/warm/#FA2A52 glow. SF + Philly custom SVG maps. Cuisine strip reused.'},
+  {slug:'the-dish-v1',title:'The Dish \u2014 v1',titleEm:'launch explainer',template:'T1 Editorial',status:'Final \u2022 ~2,100 words',desc:'ForkFox\'s launch post, editorial shell. Full humanized prose, animated CSS+SVG hero, real SF + Philly maps embedded.',visual:'Hero: animated SVG scene (plate + iPhone mockup + rising steam particles, drifting gradient, grain overlay). Hand-authored SF + Philly SVG maps. Cuisine strip reused. AI video render upgrade TK.'},
   {slug:'the-dish-v2',title:'The Dish \u2014 v2',titleEm:'launch explainer',template:'T6 Long-read',status:'Draft',desc:'Same launch post, sidebar-left long-read shell. Sticky sidebar with author + ToC + share. Horizontal callouts.',visual:'Hero AI: tighter crop of v1 scene, portrait-leaning. Same SF + Philly custom SVG maps.'},
   {slug:'the-dish-v3',title:'The Dish \u2014 v3',titleEm:'launch explainer',template:'T8 Warm Magazine',status:'Draft',desc:'Same launch post, magazine cover + centered prose + drop cap + photo essay strip. Warm beige/tan palette.',visual:'Cover AI (Seedream 4.5): candlelit dinner wide-angle, amber highlights. 3-tile photo essay (Golden Gate, Philly rowhouse, iPhone macro).'},
   {slug:'the-dish-v4',title:'The Dish \u2014 v4',titleEm:'launch explainer',template:'T41 Voices Mosaic',status:'Draft',desc:'Same launch post, single-col narrow shell. Stat row, conic-gradient ring for cuisine diversity, voices grid, neighborhood rows.',visual:'Hero AI: split-screen conceptual \u2014 Golden Gate fog / Philly rowhouse golden hour. Voice cards (Reddit / Yelp / local). Neighborhood radar rows.'},
@@ -162,7 +162,7 @@ function buildProductionGrid() {
     var body = document.createElement('div');
     body.className = 'pthumb-body';
     body.innerHTML =
-      '<div class="pthumb-top"><span class="pthumb-template">' + item.template + '</span><span class="pthumb-status">' + item.status + '</span></div>' +
+      '<div class="pthumb-top"><span class="pthumb-template">' + item.template + '</span><span class="pthumb-status' + (item.status.indexOf('Final') === 0 || item.status === 'Ready' ? ' final' : '') + '">' + item.status + '</span></div>' +
       '<div class="pthumb-title">' + titleHtml + '</div>' +
       '<div class="pthumb-desc">' + item.desc + '</div>' +
       '<div class="pthumb-visual"><strong>Visuals planned</strong>' + item.visual + '</div>';
