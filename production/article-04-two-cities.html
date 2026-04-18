@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two Cities, One Question: What Makes a Dish Worth Remembering? | ForkFox</title>
+<meta name="description" content="San Francisco and Philadelphia are 2,900 miles apart. Their food scenes share more than you'd think. A paired tour of immigrant gravity, neighborhood loyalty, and the dishes both cities love.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://forkfox.ai/the-dish/two-cities/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://forkfox.ai/the-dish/two-cities/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="https://forkfox.ai/forkfox-logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700;800;900&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#d0d0d0;font-family:'Inter',sans-serif;min-height:100vh;line-height:1.65}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+nav.site{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.97);backdrop-filter:blur(12px);border-bottom:1px solid #1a1a1a;height:60px;display:flex;align-items:center;padding:0 24px;gap:32px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-sq{width:32px;height:32px;background:#FA2A52;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Geologica',sans-serif;font-weight:900;font-size:14px;color:#fff}
+.logo-text{font-family:'Geologica',sans-serif;font-weight:700;font-size:18px;color:#fff}.logo-text span{color:#F97316}
+nav.site ul{display:flex;gap:24px;list-style:none;margin-left:auto;align-items:center}
+nav.site ul a{font-size:14px;color:#888}
+.nav-cta{background:#FA2A52;color:#fff!important;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600}
+.progress{position:fixed;top:60px;left:0;height:2px;background:linear-gradient(90deg,#FA2A52,#F97316);width:0;z-index:101;transition:width .1s}
+.draft-banner{position:fixed;top:60px;left:0;right:0;background:#FA2A52;color:#fff;text-align:center;padding:6px;font-size:11px;font-weight:700;z-index:99;font-family:monospace;text-transform:uppercase;letter-spacing:.1em}
+.page-wrap{max-width:860px;margin:0 auto;padding:110px 24px 60px}
+.breadcrumb{font-size:11px;color:#555;margin-bottom:12px;font-family:monospace;letter-spacing:.05em}
+.breadcrumb a{color:#666}.breadcrumb span{color:#FA2A52}
+h1.article-title{font-family:'Geologica',sans-serif;font-weight:900;font-size:clamp(30px,4.5vw,48px);line-height:1.08;letter-spacing:-.02em;margin-bottom:12px;color:#fff}
+h1.article-title em{font-style:normal;color:#FA2A52}
+.deck{font-size:15px;line-height:1.7;color:#999;margin:10px 0 16px;max-width:680px;font-family:'Lora',serif}
+.agg-stats{display:flex;gap:32px;flex-wrap:wrap;padding:18px 0;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;margin-bottom:32px}
+.stat{display:flex;flex-direction:column;gap:4px}
+.stat-num{font-family:'Geologica',sans-serif;font-weight:900;font-size:24px;color:#FA2A52}
+.stat-lbl{font-size:11px;color:#555;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.agg-ring-bar{background:#111;border-radius:12px;padding:20px 24px;margin-bottom:32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;border:1px solid #1a1a1a}
+.agg-ring{width:72px;height:72px;border-radius:50%;background:conic-gradient(#FA2A52 90%,#222 0);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.agg-ring-inner{width:54px;height:54px;border-radius:50%;background:#111;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Geologica',sans-serif;font-weight:900;font-size:18px;color:#FA2A52}
+.agg-ring-inner .tiny{font-size:9px;color:#666;margin-top:-2px;letter-spacing:.06em;font-weight:500;text-transform:uppercase}
+.agg-label{flex:1;min-width:180px}
+.agg-label .lbl-title{font-family:'Geologica',sans-serif;font-weight:700;font-size:15px;color:#fff;margin-bottom:3px}
+.agg-label .lbl-sub{font-size:12px;color:#777;line-height:1.5}
+.agg-dims{display:flex;gap:8px;flex-wrap:wrap}
+.dim-pill{background:#1a1a1a;border-radius:20px;padding:5px 14px;font-size:11px;color:#aaa}
+.dim-pill span{color:#FA2A52;font-weight:700;margin-left:4px}
+.hero-image{margin-bottom:40px;position:relative;border-radius:12px;overflow:hidden;background:#111;aspect-ratio:16/9}
+.hero-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#555;text-align:center;padding:28px;border:2px dashed #2a2a2a}
+.hero-placeholder .label{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#FA2A52;margin-bottom:10px}
+.hero-placeholder .desc{max-width:480px;font-size:13px;color:#888;line-height:1.65}
+article.prose{font-family:'Lora',serif;font-size:17px;line-height:1.85;color:#c0c0c0;margin-bottom:40px}
+article.prose p{margin-bottom:20px}
+article.prose h2{font-family:'Geologica',sans-serif;font-weight:800;font-size:22px;color:#fff;margin:36px 0 16px;padding-bottom:10px;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;gap:10px}
+article.prose h2::before{content:'';width:3px;height:18px;background:#FA2A52;border-radius:2px}
+.draft-stub{background:rgba(250,42,82,.06);border:1px dashed rgba(250,42,82,.25);border-radius:8px;padding:14px 18px;margin:12px 0;font-family:monospace;font-size:12px;color:#F97316;line-height:1.6}
+.draft-stub strong{color:#FA2A52;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;font-size:10px}
+.pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0}
+.pair-card{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:12px;padding:20px}
+.pair-card .pc-city{font-family:monospace;font-size:10px;color:#FA2A52;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.pair-card .pc-city.philly{color:#F97316}
+.pair-card .pc-dish{font-family:'Geologica',sans-serif;font-weight:800;font-size:17px;color:#fff;margin-bottom:10px}
+.pair-card .pc-image{aspect-ratio:4/3;background:#111;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;text-align:center;margin-bottom:10px;border:1px dashed #2a2a2a}
+.pair-card .pc-image .ilbl{font-family:monospace;font-size:10px;color:#FA2A52;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.pair-card .pc-image .idesc{font-size:11px;color:#777;line-height:1.55;max-width:240px}
+.pair-card .pc-body{font-size:13px;color:#999;line-height:1.6;font-family:'Inter',sans-serif}
+.voices-block{margin:40px 0}
+.voices-title{font-family:'Geologica',sans-serif;font-weight:800;font-size:20px;color:#fff;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.voices-title::before{content:'';width:3px;height:18px;background:#FA2A52;border-radius:2px}
+.voices-sub{font-size:13px;color:#777;margin-bottom:20px;padding-left:13px}
+.voices-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.voice-card{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:12px;padding:18px}
+.vc-top{display:flex;justify-content:space-between;margin-bottom:12px;gap:10px}
+.vc-who{font-family:'Geologica',sans-serif;font-weight:700;font-size:14px;color:#fff}
+.vc-where{font-size:11px;color:#F97316;margin-top:2px}
+.vc-badge{font-size:11px;color:#888;font-family:monospace}
+.vc-quote{font-size:14px;color:#b0b0b0;line-height:1.7;padding:12px 14px;background:#080808;border-radius:8px;border-left:2px solid #FA2A52;font-style:italic;font-family:'Lora',serif}
+.faq{margin:40px 0}
+.faq-title{font-family:'Geologica',sans-serif;font-weight:800;font-size:22px;color:#fff;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.faq-title::before{content:'';width:3px;height:20px;background:#FA2A52;border-radius:2px}
+.faq-item{border-top:1px solid #1a1a1a;padding:16px 0}.faq-item:last-child{border-bottom:1px solid #1a1a1a}
+.faq-q{font-family:'Geologica',sans-serif;font-weight:700;font-size:15px;color:#fff;margin-bottom:8px}
+.faq-a{font-size:14px;color:#999;line-height:1.7}
+.cta-block{margin:40px 0;padding:28px;background:linear-gradient(135deg,rgba(250,42,82,.12),rgba(249,115,22,.05));border:1px solid rgba(250,42,82,.25);border-radius:14px;text-align:center}
+.cta-block h3{font-family:'Geologica',sans-serif;font-weight:900;font-size:22px;color:#fff;margin-bottom:6px}
+.cta-block p{color:#aaa;font-size:14px;margin-bottom:20px}
+.cta-block a.btn{display:inline-flex;align-items:center;gap:8px;background:#FA2A52;color:#fff;padding:12px 24px;border-radius:100px;font-family:'Geologica',sans-serif;font-weight:800;font-size:13px}
+.related{margin-top:40px;padding-top:32px;border-top:1px solid #1a1a1a}
+.related h3{font-family:'Geologica',sans-serif;font-weight:800;font-size:18px;color:#fff;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.related h3::before{content:'';width:3px;height:16px;background:#FA2A52;border-radius:2px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.related-card{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:10px;padding:16px;display:block}
+.related-card:hover{border-color:#FA2A52}
+.related-card .rc-tag{font-size:10px;color:#FA2A52;text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:6px}
+.related-card .rc-title{font-family:'Geologica',sans-serif;font-weight:700;font-size:13px;color:#fff;line-height:1.3}
+footer{background:#050505;border-top:1px solid #1a1a1a;padding:40px 24px;color:#555;font-size:13px;text-align:center;margin-top:60px}
+footer a{color:#888}
+@media(max-width:700px){.pair-grid,.voices-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.page-wrap{padding:100px 16px 40px}h1.article-title{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="draft-banner">Draft · Template 41 Voices Mosaic · Article 4 of 4 · humanized prose fills in post-approval</div>
+<nav class="site">
+  <a href="/" class="logo"><div class="logo-sq">FF</div><div class="logo-text">Fork<span>Fox</span></div></a>
+  <ul><li><a href="/the-dish">The Dish</a></li><li><a href="/carte">Carte</a></li><li><a href="/#download" class="nav-cta">Join Beta →</a></li></ul>
+</nav>
+
+<div class="page-wrap">
+  <nav class="breadcrumb"><a href="/">Home</a> / <a href="/the-dish">The Dish</a> / <span>two-cities</span></nav>
+
+  <h1 class="article-title">Two cities, one question: what makes a dish <em>worth remembering</em>?</h1>
+  <p class="deck">San Francisco and Philadelphia are 2,900 miles apart. Their food scenes share more than you'd think. And the things they don't share are the most revealing.</p>
+
+  <div class="agg-stats">
+    <div class="stat"><div class="stat-num">2,900</div><div class="stat-lbl">Miles apart</div></div>
+    <div class="stat"><div class="stat-num">9</div><div class="stat-lbl">Shared cuisines</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-lbl">Paired contrasts</div></div>
+    <div class="stat"><div class="stat-num">1</div><div class="stat-lbl">Shared question</div></div>
+  </div>
+
+  <div class="agg-ring-bar">
+    <div class="agg-ring"><div class="agg-ring-inner">90%<span class="tiny">OVERLAP</span></div></div>
+    <div class="agg-label">
+      <div class="lbl-title">What SF + Philly share, by cuisine</div>
+      <div class="lbl-sub">Both cities cover 9 of ForkFox's 10 launch cuisines. The outlier is Burmese (SF only).</div>
+    </div>
+    <div class="agg-dims">
+      <div class="dim-pill">Shared<span>9</span></div>
+      <div class="dim-pill">SF-only<span>1</span></div>
+    </div>
+  </div>
+
+  <figure class="hero-image">
+    <div class="hero-placeholder">
+      <span class="label">Hero · AI-generated (FLUX Dev, split composite)</span>
+      <span class="desc">Split-screen conceptual: left half — Golden Gate bridge in morning fog, shot from the Marina. Right half — Philly rowhouse street at golden hour, Fishtown-style. Diagonal seam in center, slight color grade mismatch to imply contrast. Dark, cinematic, no text.</span>
+    </div>
+  </figure>
+
+  <article class="prose">
+    <p>Two American cities, 2,900 miles apart. One dripping in Michelin stars, the other proud of its sandwich. Different weather, different bread, different immigrants, different money. And yet if you overlay their food maps, the patterns are almost identical.</p>
+    <div class="draft-stub"><strong>Stub · 2 intro paragraphs</strong>Frame the question: why do these two very different cities produce such overlapping food intelligence? What's shared, what's different, and what does that tell us about what makes a dish memorable?</div>
+  </article>
+
+  <section class="voices-block">
+    <h3 class="voices-title">What's shared: immigrant food gravity</h3>
+    <p class="voices-sub">The cuisines that anchor both cities — and why.</p>
+    <div class="pair-grid">
+      <div class="pair-card"><div class="pc-city">SF</div><div class="pc-dish">Mission burrito</div>
+        <div class="pc-image"><div><div class="ilbl">AI · feature shot</div><div class="idesc">Cross-section of a foil-wrapped Mission burrito, steam rising.</div></div></div>
+        <div class="pc-body">The Mission's Mexican-American workforce and 60+ years of taquería evolution. La Taqueria, El Farolito, Cancún — each a technique study.</div>
+      </div>
+      <div class="pair-card"><div class="pc-city philly">Philly</div><div class="pc-dish">DiNic's roast pork</div>
+        <div class="pc-image"><div><div class="ilbl">AI · feature shot</div><div class="idesc">Roast pork Italian sandwich with sharp provolone + broccoli rabe, dripping onto butcher paper.</div></div></div>
+        <div class="pc-body">The actual city sandwich (not the cheesesteak). Italian-American tradition, Reading Terminal counter since 1954.</div>
+      </div>
+    </div>
+    <div class="draft-stub"><strong>Stub · 2 paragraphs</strong>The parallels: both cities' best dishes come from working-class immigrant food traditions, not from culinary schools. What the data shows about neighborhood vs. prestige.</div>
+  </section>
+
+  <section class="voices-block">
+    <h3 class="voices-title">What's different: bread gravity</h3>
+    <p class="voices-sub">Two cities, two bread philosophies.</p>
+    <div class="pair-grid">
+      <div class="pair-card"><div class="pc-city">SF</div><div class="pc-dish">Sourdough</div>
+        <div class="pc-image"><div><div class="ilbl">AI · feature shot</div><div class="idesc">Cross-section of a Tartine country loaf, dramatic open crumb.</div></div></div>
+        <div class="pc-body">Wild fermentation, slow proof, Tartine's influence globalized. A San Francisco loaf is the SF food scene in bread form.</div>
+      </div>
+      <div class="pair-card"><div class="pc-city philly">Philly</div><div class="pc-dish">Hoagie roll</div>
+        <div class="pc-image"><div><div class="ilbl">AI · feature shot</div><div class="idesc">Sarcone's seeded hoagie roll cross-section, dense crumb, sesame-dusted.</div></div></div>
+        <div class="pc-body">Tight crumb, crackling crust, engineered for structural integrity under wet fillings. The city's real bread innovation.</div>
+      </div>
+    </div>
+    <div class="draft-stub"><strong>Stub · 2 paragraphs</strong>Why bread is the best diagnostic for a food culture. What SF sourdough culture teaches us about restaurant-forward cities, and what Philly's hoagie roll teaches us about sandwich-forward cities.</div>
+  </section>
+
+  <section class="voices-block">
+    <h3 class="voices-title">What both cities love: seafood</h3>
+    <div class="pair-grid">
+      <div class="pair-card"><div class="pc-city">SF</div><div class="pc-dish">Cioppino</div>
+        <div class="pc-image"><div><div class="ilbl">AI · feature shot</div><div class="idesc">Overhead bowl of cioppino — clams, dungeness, tomato broth, sourdough on the side.</div></div></div>
+        <div class="pc-body">North Beach invention, Portuguese + Italian sailor roots. Swan Oyster Depot's neighbor in soul.</div>
+      </div>
+      <div class="pair-card"><div class="pc-city philly">Philly</div><div class="pc-dish">Scratch BYOB raw bar</div>
+        <div class="pc-image"><div><div class="ilbl">AI · feature shot</div><div class="idesc">Raw bar on ice: oysters, clams, shrimp, lemon wedges, on a BYOB table with a wine glass beside.</div></div></div>
+        <div class="pc-body">Fishtown and Old City BYOBs doing coastal-quality seafood without the coast premium.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="voices-block">
+    <h3 class="voices-title">What both cities ignore</h3>
+    <p class="voices-sub">The cuisines that deserve more attention in both cities.</p>
+    <div class="voices-grid">
+      <div class="voice-card"><div class="vc-top"><div><div class="vc-who">Ethiopian</div><div class="vc-where">Both cities</div></div><div class="vc-badge">Underrated</div></div><div class="vc-quote">[Draft · both SF's 6th Ave and Philly's Baltimore Ave have excellent Ethiopian that doesn't get food-map coverage]</div></div>
+      <div class="voice-card"><div class="vc-top"><div><div class="vc-who">Burmese</div><div class="vc-where">SF strength</div></div><div class="vc-badge">Niche</div></div><div class="vc-quote">[Draft · Burma Superstar, the tea-leaf salad tradition, how SF became America's Burmese capital]</div></div>
+      <div class="voice-card"><div class="vc-top"><div><div class="vc-who">Vietnamese</div><div class="vc-where">Both cities</div></div><div class="vc-badge">Growing</div></div><div class="vc-quote">[Draft · SF's Tenderloin vs. Philly's Italian Market — parallel immigration stories, parallel pho cultures]</div></div>
+      <div class="voice-card"><div class="vc-top"><div><div class="vc-who">Indian</div><div class="vc-where">Both cities</div></div><div class="vc-badge">Underrated</div></div><div class="vc-quote">[Draft · Tenderloin dosas, South Jersey/Center City Indian — worth more attention than food media gives]</div></div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2 class="faq-title">Frequently asked</h2>
+    <div class="faq-item"><div class="faq-q">Why these two cities for the ForkFox beta?</div><div class="faq-a">Both have deep food cultures and dense neighborhood-level variety — ideal conditions for a dish-level scoring app to prove itself.</div></div>
+    <div class="faq-item"><div class="faq-q">What's the single biggest difference between SF and Philly food scenes?</div><div class="faq-a">SF scales up (tasting menus, destination dining). Philly scales out (neighborhood density, BYOBs, counter service). Both produce great plates in different packages.</div></div>
+    <div class="faq-item"><div class="faq-q">Which city has better seafood?</div><div class="faq-a">SF by coast access, Philly by price-to-quality ratio at BYOB raw bars. The ForkFox scores are closer than the raw supply would suggest.</div></div>
+    <div class="faq-item"><div class="faq-q">Is there a dish both cities do equally well?</div><div class="faq-a">Pizza, actually. SF's sourdough Neapolitan hybrid and Philly's tomato pie + Neapolitan-wave BYOBs both score in the 85-95 range on execution.</div></div>
+    <div class="faq-item"><div class="faq-q">Where should I start if I only have one weekend in each city?</div><div class="faq-a">SF: breakfast at Tartine, dim sum lunch at Yank Sing, Mission dinner at La Taqueria. Philly: DiNic's roast pork at Reading Terminal, Italian Market Vietnamese, Fishtown BYOB.</div></div>
+  </section>
+
+  <aside class="cta-block">
+    <h3>Eat both cities with us</h3>
+    <p>ForkFox is live in SF and Philly — free iOS beta.</p>
+    <a href="/#download" class="btn">Join the beta →</a>
+  </aside>
+
+  <section class="related">
+    <h3>Related reads</h3>
+    <div class="related-grid">
+      <a class="related-card" href="/the-dish/the-dish-v1/"><div class="rc-tag">Launch</div><div class="rc-title">The Dish: ForkFox's launch, explained</div></a>
+      <a class="related-card" href="/the-dish/how-forkfox-sees-a-city/"><div class="rc-tag">Concept</div><div class="rc-title">How ForkFox sees a city</div></a>
+      <a class="related-card" href="/the-dish/philly-beyond-cheesesteak/"><div class="rc-tag">Philly</div><div class="rc-title">Philly beyond cheesesteak</div></a>
+      <a class="related-card" href="/the-dish/sf-plate-first/"><div class="rc-tag">SF</div><div class="rc-title">SF plate-first</div></a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>ForkFox · <a href="/the-dish">The Dish</a> · <a href="/carte">Carte</a> · <a href="/privacy">Privacy</a> · <a href="/support">Support</a></p>
+  <p style="margin-top:10px">&copy; 2026 ForkFox. Patent pending.</p>
+</footer>
+
+<script>window.addEventListener('scroll',function(){var h=document.documentElement,b=document.body;var pct=(h.scrollTop||b.scrollTop)/((h.scrollHeight||b.scrollHeight)-h.clientHeight)*100;document.getElementById('progress').style.width=pct+'%'});</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Two Cities, One Question: What Makes a Dish Worth Remembering?","description":"SF and Philly food scenes compared.","image":"https://forkfox.ai/the-dish/two-cities/og.jpg","datePublished":"2026-05-02","author":{"@type":"Person","name":"ForkFox Team"},"publisher":{"@type":"Organization","name":"ForkFox","logo":{"@type":"ImageObject","url":"https://forkfox.ai/forkfox-logo.png"}}}</script>
+</body>
+</html>

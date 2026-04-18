@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How ForkFox Sees a City — The Dish | ForkFox</title>
+<meta name="description" content="A 4.6-star restaurant can serve a 6 out of 10 biryani. Why ForkFox scores dishes, not dinners — and what that means for how you eat.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://forkfox.ai/the-dish/how-forkfox-sees-a-city/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How ForkFox Sees a City">
+<meta property="og:description" content="The case for scoring dishes, not dinners.">
+<meta property="og:image" content="https://forkfox.ai/the-dish/how-forkfox-sees-a-city/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="https://forkfox.ai/forkfox-logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700;800;900&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#d8d8d8;font-family:'Inter',sans-serif;min-height:100vh;line-height:1.65}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+nav.site{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-bottom:1px solid #1a1a1a;height:60px;display:flex;align-items:center;padding:0 24px;gap:32px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-sq{width:32px;height:32px;background:#FA2A52;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Geologica',sans-serif;font-weight:900;font-size:14px;color:#fff}
+.logo-text{font-family:'Geologica',sans-serif;font-weight:700;font-size:18px;color:#fff}.logo-text span{color:#F97316}
+nav.site ul{display:flex;gap:24px;list-style:none;margin-left:auto;align-items:center}
+nav.site ul a{font-size:14px;color:#999}
+.nav-cta{background:#FA2A52;color:#fff!important;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600}
+.progress{position:fixed;top:60px;left:0;height:2px;background:linear-gradient(90deg,#FA2A52,#F97316);width:0;z-index:101;transition:width .1s}
+.draft-banner{position:fixed;top:60px;left:0;right:0;background:#FA2A52;color:#fff;text-align:center;padding:6px;font-size:11px;font-weight:700;z-index:99;font-family:monospace;text-transform:uppercase;letter-spacing:.1em}
+.page-wrap{max-width:1200px;margin:0 auto;padding:110px 24px 60px}
+.breadcrumb{font-size:12px;color:#555;margin-bottom:20px;font-family:monospace}
+.breadcrumb a{color:#666}.breadcrumb span{color:#FA2A52}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tag{font-size:11px;padding:4px 12px;border-radius:20px;background:rgba(250,42,82,.1);border:1px solid rgba(250,42,82,.3);color:#FA2A52;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.tag.concept{background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.3);color:#34d399}
+h1.article-title{font-family:'Geologica',sans-serif;font-weight:900;font-size:clamp(32px,5vw,56px);line-height:1.05;letter-spacing:-.02em;margin-bottom:16px;color:#fff}
+h1.article-title em{font-style:normal;color:#FA2A52}
+.deck{font-size:clamp(16px,2vw,20px);line-height:1.55;color:#aaa;max-width:780px;margin-bottom:28px;font-family:'Lora',serif}
+.byline{display:flex;align-items:center;gap:16px;padding-top:20px;border-top:1px solid #1a1a1a;font-size:13px;color:#777}
+.byline .author{color:#ccc;font-weight:600}.byline .sep{color:#333}
+.hero-image{margin:32px 0 48px;position:relative;border-radius:14px;overflow:hidden;background:#111;aspect-ratio:16/9}
+.hero-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#555;text-align:center;padding:32px;border:2px dashed #2a2a2a}
+.hero-placeholder .label{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#FA2A52;margin-bottom:12px}
+.hero-placeholder .desc{max-width:560px;font-size:14px;color:#888;line-height:1.7}
+.two-col{display:grid;grid-template-columns:65fr 35fr;gap:56px;align-items:start}
+.content article{font-family:'Lora',serif;font-size:17px;line-height:1.85;color:#c8c8c8}
+.content article p{margin-bottom:22px}
+.content article p:first-of-type::first-letter{font-family:'Geologica',sans-serif;font-size:4.2em;float:left;line-height:.85;margin:4px 10px 0 0;color:#FA2A52;font-weight:900}
+.content h2{font-family:'Geologica',sans-serif;font-weight:800;font-size:28px;line-height:1.2;color:#fff;margin:48px 0 20px;letter-spacing:-.01em;position:relative;padding-left:20px}
+.content h2::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:4px;background:linear-gradient(180deg,#FA2A52,#F97316);border-radius:2px}
+.draft-stub{background:rgba(250,42,82,.06);border:1px dashed rgba(250,42,82,.25);border-radius:8px;padding:14px 18px;margin:12px 0 22px;font-family:monospace;font-size:12px;color:#F97316;line-height:1.6}
+.draft-stub strong{color:#FA2A52;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em;font-size:10px}
+.pull-quote{margin:40px 0;padding:28px 32px;background:linear-gradient(135deg,rgba(250,42,82,.08),rgba(249,115,22,.04));border-left:3px solid #FA2A52;border-radius:0 12px 12px 0;font-family:'Geologica',sans-serif;font-weight:600;font-size:22px;line-height:1.4;color:#fff}
+.pull-quote::before{content:'"';color:#FA2A52;font-size:48px;line-height:0;vertical-align:-24px;margin-right:6px}
+.attr-break{margin:36px 0;padding:28px;background:#0d0d0d;border:1px solid #1a1a1a;border-radius:14px}
+.attr-break .ab-title{font-family:'Geologica',sans-serif;font-weight:800;font-size:18px;color:#fff;margin-bottom:12px}
+.attr-break .ab-placeholder{aspect-ratio:5/2;background:#111;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;border:2px dashed #2a2a2a}
+.attr-break .ab-placeholder .lbl{font-family:monospace;font-size:11px;color:#FA2A52;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.attr-break .ab-placeholder .desc{font-size:13px;color:#888;line-height:1.65;max-width:520px}
+.faq{margin:56px 0}
+.faq-title{font-family:'Geologica',sans-serif;font-weight:800;font-size:28px;color:#fff;margin-bottom:24px}
+.faq-item{border-top:1px solid #1a1a1a;padding:20px 0}.faq-item:last-child{border-bottom:1px solid #1a1a1a}
+.faq-q{font-family:'Geologica',sans-serif;font-weight:700;font-size:17px;color:#fff;margin-bottom:10px}
+.faq-a{font-size:15px;color:#aaa;line-height:1.7}
+.cta-block{margin:56px 0;padding:40px 32px;background:linear-gradient(135deg,rgba(250,42,82,.1),rgba(249,115,22,.04));border:1px solid rgba(250,42,82,.2);border-radius:16px;text-align:center}
+.cta-block h3{font-family:'Geologica',sans-serif;font-weight:900;font-size:28px;color:#fff;margin-bottom:10px}
+.cta-block p{color:#aaa;font-size:15px;margin-bottom:24px}
+.cta-block a.btn{display:inline-flex;align-items:center;gap:10px;background:#FA2A52;color:#fff;padding:14px 28px;border-radius:100px;font-family:'Geologica',sans-serif;font-weight:800;font-size:14px}
+.sidebar{position:sticky;top:120px}
+.sidebar-card{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:14px;padding:22px;margin-bottom:18px}
+.sidebar-card h3{font-family:'Geologica',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;color:#888}
+.toc{list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.toc a{color:#ccc;padding:6px 0;display:block;border-left:2px solid #222;padding-left:12px}
+.toc a:hover{color:#FA2A52;border-left-color:#FA2A52}
+.author-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#FA2A52,#F97316);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Geologica',sans-serif;font-weight:900;font-size:16px}
+.author-info .name{font-family:'Geologica',sans-serif;font-weight:700;color:#fff;font-size:14px}
+.author-info .role{font-size:12px;color:#666}
+.related{margin-top:56px;padding-top:40px;border-top:1px solid #1a1a1a}
+.related h3{font-family:'Geologica',sans-serif;font-weight:800;font-size:22px;color:#fff;margin-bottom:24px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.related-card{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:12px;padding:20px;display:block;transition:all .2s}
+.related-card:hover{border-color:#FA2A52;transform:translateY(-2px)}
+.related-card .rc-tag{font-size:10px;color:#FA2A52;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:8px}
+.related-card .rc-title{font-family:'Geologica',sans-serif;font-weight:700;font-size:15px;color:#fff;line-height:1.35;margin-bottom:8px}
+.related-card .rc-desc{font-size:13px;color:#888;line-height:1.55}
+footer{background:#050505;border-top:1px solid #1a1a1a;padding:40px 24px;color:#555;font-size:13px;text-align:center;margin-top:80px}
+footer a{color:#888}
+@media(max-width:900px){.two-col{grid-template-columns:1fr;gap:32px}.sidebar{position:static}}
+@media(max-width:520px){.page-wrap{padding:100px 16px 40px}h1.article-title{font-size:36px}.content article p:first-of-type::first-letter{font-size:3.2em}.content h2{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="draft-banner">Draft · Template 1 Editorial · Article 1 of 4 · humanized prose fills in post-approval</div>
+<nav class="site">
+  <a href="/" class="logo"><div class="logo-sq">FF</div><div class="logo-text">Fork<span>Fox</span></div></a>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/the-dish">The Dish</a></li>
+    <li><a href="/carte">Carte</a></li>
+    <li><a href="/#download" class="nav-cta">Join Beta →</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <nav class="breadcrumb"><a href="/">Home</a> / <a href="/the-dish">The Dish</a> / <span>how-forkfox-sees-a-city</span></nav>
+
+  <header>
+    <div class="tag-row">
+      <span class="tag">Concept</span>
+      <span class="tag concept">Algorithm</span>
+    </div>
+    <h1 class="article-title">How ForkFox <em>sees</em> a city</h1>
+    <p class="deck">A 4.6-star restaurant can serve a 6 out of 10 biryani. Why dish-level intelligence is harder than venue ratings — and why it's the only honest way to tell you what to eat.</p>
+    <div class="byline">
+      <span class="author">ForkFox Team</span><span class="sep">·</span>
+      <time datetime="2026-04-22">April 22, 2026</time><span class="sep">·</span>
+      <span>7 min read</span>
+    </div>
+  </header>
+
+  <figure class="hero-image">
+    <div class="hero-placeholder">
+      <span class="label">Hero · AI-generated (FLUX Dev)</span>
+      <span class="desc">Overhead moody macro: a plate deconstructed on dark walnut — single dumpling sliced open, broth halo, chopsticks angled. Shallow DOF, cinematic color grade. Dark base + warm amber rim light + #FA2A52 accent glow from off-frame. No text, no hands.</span>
+    </div>
+  </figure>
+
+  <div class="two-col">
+    <div class="content">
+      <article>
+        <h2 id="star-problem">The star problem</h2>
+        <p>Every time you've opened a food app, it's handed you a venue. Four and a half stars. Save it. Map it. Drive there. Then you sat down and the dish that was supposed to be the signature — the thing the reviewers cried about — arrived cold, oily, or worse: mediocre.</p>
+        <div class="draft-stub"><strong>Stub · 2 paragraphs</strong>Why stars are averages of unrelated things (service, patio, one reviewer's bad day). How this failure compounds across every food app ever built.</div>
+
+        <div class="pull-quote">A star rating is an average of a thousand opinions about different things. It can tell you a restaurant exists. It can't tell you what to order.</div>
+
+        <h2 id="what-a-score-measures">What a dish score actually measures</h2>
+        <div class="draft-stub"><strong>Stub · 3 paragraphs</strong>Walk through the five attributes: flavor, texture, value, execution, context. Use a concrete example — the same menu's $38 entrée might earn 74 while the $14 side earns 91.</div>
+
+        <div class="attr-break">
+          <div class="ab-title">Five attributes, one score</div>
+          <div class="ab-placeholder">
+            <div class="lbl">Custom SVG illustration · post-approval</div>
+            <div class="desc">A branded SVG showing a plate rendered as a 5-node diagram: flavor, texture, value, execution, context. Each node with a score bar. Dark theme, ForkFox palette. Design goal: explains the algorithm at a glance, distinct visual signature for the article.</div>
+          </div>
+        </div>
+
+        <h2 id="dish-wins">Why the dish wins over the restaurant</h2>
+        <div class="draft-stub"><strong>Stub · 3 paragraphs</strong>A 4.5-star restaurant serving a 6/10 biryani. A no-name spot serving a 94. Real beta findings pattern — top-scoring dishes in SF and Philly come from un-starred neighborhoods as often as from famous rooms.</div>
+
+        <h2 id="beta-findings">What we found in beta</h2>
+        <div class="draft-stub"><strong>Stub · 2 paragraphs</strong>Intro-mode generalizations only, no named ranks. Pattern-level observations: the best dish on a menu is usually not the "house signature." Value scores skew higher outside the Michelin-halo neighborhoods.</div>
+
+        <div class="cta-block">
+          <h3>Score your next meal</h3>
+          <p>Join the ForkFox beta — SF + Philly, free iOS TestFlight, no ads.</p>
+          <a href="/#download" class="btn">Join the beta →</a>
+        </div>
+      </article>
+
+      <section class="faq">
+        <h2 class="faq-title">Frequently asked</h2>
+        <div class="faq-item"><div class="faq-q">Why dishes instead of restaurants?</div><div class="faq-a">Because you eat dishes, not restaurants. A venue rating averages the room, the service, and a dozen plates you'll never order.</div></div>
+        <div class="faq-item"><div class="faq-q">How does the scoring actually work?</div><div class="faq-a">Five attributes — flavor, texture, value, execution, context — each scored from aggregated review data, then weighted and personalized to your taste profile.</div></div>
+        <div class="faq-item"><div class="faq-q">What counts as "execution"?</div><div class="faq-a">Consistency across visits, technical competence of the prep, how close the plate matches the cuisine's canonical version. We weight this higher for cuisines with high technical floors (ramen, sushi).</div></div>
+        <div class="faq-item"><div class="faq-q">How is this different from Google/Yelp?</div><div class="faq-a">Those rank places. We rank plates. A 4-star restaurant in our system might have one 94-scoring dish and one 62-scoring dish on the same menu.</div></div>
+        <div class="faq-item"><div class="faq-q">Where can I try it?</div><div class="faq-a">iOS beta, free, live in San Francisco and Philadelphia. Join from <a href="/">forkfox.ai</a>.</div></div>
+      </section>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3>In this piece</h3>
+        <ul class="toc">
+          <li><a href="#star-problem">The star problem</a></li>
+          <li><a href="#what-a-score-measures">What a dish score measures</a></li>
+          <li><a href="#dish-wins">Why the dish wins</a></li>
+          <li><a href="#beta-findings">What we found in beta</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h3>Written by</h3>
+        <div class="author-row">
+          <div class="author-avatar">FF</div>
+          <div class="author-info"><div class="name">ForkFox Team</div><div class="role">Founders</div></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="related">
+    <h3>Related reads</h3>
+    <div class="related-grid">
+      <a class="related-card" href="/the-dish/the-dish-v1/"><div class="rc-tag">Launch</div><div class="rc-title">The Dish: ForkFox's launch, explained</div><div class="rc-desc">What the app does, where it's live, how to try it.</div></a>
+      <a class="related-card" href="/the-dish/philly-beyond-cheesesteak/"><div class="rc-tag">Philly</div><div class="rc-title">What Philly eats when it's not eating a cheesesteak</div><div class="rc-desc">The BYOB underground, Italian Market's hidden corners.</div></a>
+      <a class="related-card" href="/the-dish/sf-plate-first/"><div class="rc-tag">SF</div><div class="rc-title">SF is a tasting menu</div><div class="rc-desc">But the best plates aren't always on it.</div></a>
+      <a class="related-card" href="/the-dish/two-cities/"><div class="rc-tag">Compare</div><div class="rc-title">Two cities, one question</div><div class="rc-desc">What makes a dish worth remembering?</div></a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>ForkFox · <a href="/the-dish">The Dish</a> · <a href="/carte">Carte</a> · <a href="/privacy">Privacy</a> · <a href="/support">Support</a></p>
+  <p style="margin-top:10px">&copy; 2026 ForkFox. Patent pending.</p>
+</footer>
+
+<script>window.addEventListener('scroll',function(){var h=document.documentElement,b=document.body;var pct=(h.scrollTop||b.scrollTop)/((h.scrollHeight||b.scrollHeight)-h.clientHeight)*100;document.getElementById('progress').style.width=pct+'%'});</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How ForkFox Sees a City","description":"The case for scoring dishes, not dinners.","image":"https://forkfox.ai/the-dish/how-forkfox-sees-a-city/og.jpg","datePublished":"2026-04-22","author":{"@type":"Person","name":"ForkFox Team"},"publisher":{"@type":"Organization","name":"ForkFox","logo":{"@type":"ImageObject","url":"https://forkfox.ai/forkfox-logo.png"}}}</script>
+</body>
+</html>

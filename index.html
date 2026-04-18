@@ -23,6 +23,24 @@ body{background:#0a0a0a;color:#fff;font-family:Inter,sans-serif;min-height:100vh
 .tab-panel{display:none;padding:1.5rem 2rem 3rem}
 .tab-panel.active{display:block}
 .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.grid-production{grid-template-columns:repeat(4,1fr);gap:18px}
+.pthumb{cursor:pointer;border-radius:12px;overflow:hidden;border:1.5px solid rgba(255,255,255,.07);transition:all .25s;background:#111;display:flex;flex-direction:column}
+.pthumb:hover{border-color:#FA2A52;transform:translateY(-3px);box-shadow:0 12px 36px rgba(250,42,82,.18)}
+.pthumb-wrap{width:100%;position:relative;overflow:hidden;background:#0d0d0d}
+.pthumb-wrap::before{content:'';display:block;padding-top:60%}
+.pthumb-wrap iframe{position:absolute;top:0;left:0;width:1280px;height:900px;transform:scale(0.25);transform-origin:top left;pointer-events:none;border:none}
+.pthumb-body{padding:14px 16px;background:#0e0e0e;border-top:1px solid rgba(255,255,255,.05);flex:1;display:flex;flex-direction:column;gap:8px}
+.pthumb-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.pthumb-template{font-size:.58rem;color:#FA2A52;background:rgba(250,42,82,.1);border:1px solid rgba(250,42,82,.25);padding:2px 7px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;font-family:monospace}
+.pthumb-status{font-size:.58rem;color:#F97316;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.25);padding:2px 7px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;font-family:monospace}
+.pthumb-status.ready{color:#34d399;background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.25)}
+.pthumb-title{font-family:'Geologica',sans-serif;font-weight:700;font-size:.85rem;color:#fff;line-height:1.3}
+.pthumb-title em{font-style:normal;color:#FA2A52}
+.pthumb-desc{font-size:.72rem;color:rgba(255,255,255,.45);line-height:1.5}
+.pthumb-visual{font-size:.65rem;color:rgba(249,115,22,.7);line-height:1.5;padding-top:6px;border-top:1px dashed rgba(255,255,255,.06);font-family:monospace}
+.pthumb-visual strong{color:#F97316;display:block;margin-bottom:3px;font-size:.58rem;text-transform:uppercase;letter-spacing:.06em}
+@media(max-width:1100px){.grid-production{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.grid-production{grid-template-columns:1fr}}
 .thumb{cursor:pointer;border-radius:10px;overflow:hidden;border:1.5px solid rgba(255,255,255,.07);transition:all .25s;background:#111}
 .thumb:hover{border-color:#FA2A52;transform:translateY(-3px);box-shadow:0 12px 36px rgba(250,42,82,.18)}
 .thumb-wrap{width:100%;position:relative;overflow:hidden;background:#0d0d0d}
@@ -50,14 +68,16 @@ body{background:#0a0a0a;color:#fff;font-family:Inter,sans-serif;min-height:100vh
     <div class="nav-logo">FF</div>
     <span class="nav-name">Fork<span class="fox">Fox</span></span>
   </div>
-  <span class="nav-label">Template Gallery &mdash; 100 Designs</span>
+  <span class="nav-label">Template Gallery &mdash; 108 Designs</span>
 </nav>
 <div class="tabs-bar">
   <button class="tab-btn active" id="btn-dish" onclick="switchTab('dish')">The Dish <span class="tab-count">50</span></button>
   <button class="tab-btn" id="btn-carte" onclick="switchTab('carte')">Carte <span class="tab-count">50</span></button>
+  <button class="tab-btn" id="btn-production" onclick="switchTab('production')">Dish Articles (for production) <span class="tab-count">8</span></button>
 </div>
 <div id="tab-dish" class="tab-panel active"><div class="grid" id="grid-dish"></div></div>
 <div id="tab-carte" class="tab-panel"><div class="grid" id="grid-carte"></div></div>
+<div id="tab-production" class="tab-panel"><div class="grid grid-production" id="grid-production"></div></div>
 <div class="lightbox" id="lightbox">
   <div class="lb-inner">
     <div class="lb-bar">
@@ -113,8 +133,52 @@ function buildGrid(type, archetypes) {
 buildGrid('dish', DA);
 buildGrid('carte', CA);
 
+var PRODUCTION = [
+  {slug:'the-dish-v1',title:'The Dish \u2014 v1',titleEm:'launch explainer',template:'T1 Editorial',status:'Draft',desc:'ForkFox\'s launch post, editorial shell. 65/35 content-right, drop cap, sidebar ToC + author.',visual:'Hero AI: overhead dinner table, iPhone + plate, dark/warm/#FA2A52 glow. SF + Philly custom SVG maps. Cuisine strip reused.'},
+  {slug:'the-dish-v2',title:'The Dish \u2014 v2',titleEm:'launch explainer',template:'T6 Long-read',status:'Draft',desc:'Same launch post, sidebar-left long-read shell. Sticky sidebar with author + ToC + share. Horizontal callouts.',visual:'Hero AI: tighter crop of v1 scene, portrait-leaning. Same SF + Philly custom SVG maps.'},
+  {slug:'the-dish-v3',title:'The Dish \u2014 v3',titleEm:'launch explainer',template:'T8 Warm Magazine',status:'Draft',desc:'Same launch post, magazine cover + centered prose + drop cap + photo essay strip. Warm beige/tan palette.',visual:'Cover AI (Seedream 4.5): candlelit dinner wide-angle, amber highlights. 3-tile photo essay (Golden Gate, Philly rowhouse, iPhone macro).'},
+  {slug:'the-dish-v4',title:'The Dish \u2014 v4',titleEm:'launch explainer',template:'T41 Voices Mosaic',status:'Draft',desc:'Same launch post, single-col narrow shell. Stat row, conic-gradient ring for cuisine diversity, voices grid, neighborhood rows.',visual:'Hero AI: split-screen conceptual \u2014 Golden Gate fog / Philly rowhouse golden hour. Voice cards (Reddit / Yelp / local). Neighborhood radar rows.'},
+  {slug:'article-01-how-forkfox-sees',title:'How ForkFox sees a city',titleEm:'',template:'T1 Editorial',status:'Draft',desc:'Conceptual essay \u2014 why dish-level intelligence matters. The star problem, five attributes, why dishes beat restaurants.',visual:'Hero AI: overhead moody macro of a deconstructed plate on dark walnut. Custom SVG "attribute breakdown" diagram (hand-authored). Mockup-score.png reused.'},
+  {slug:'article-02-philly-beyond-cheesesteak',title:'What Philly eats when it\'s not eating a cheesesteak',titleEm:'',template:'T6 Long-read',status:'Draft',desc:'Philly\'s overlooked scene: BYOB underground, Italian Market\'s Vietnamese corner, Baltimore Ave Ethiopian, Fishtown, Reading Terminal.',visual:'Hero AI: Fishtown dusk, warm tungsten, BYOB through glass. Horizontal callouts: Bella Vista BYOBs + Fishtown rowhouse storefront. Inline: pho bowl, injera plate, Burmese tea salad.'},
+  {slug:'article-03-sf-plate-first',title:'SF is a tasting menu \u2014 but the best plates aren\'t always on it',titleEm:'',template:'T8 Warm Magazine',status:'Draft',desc:'SF\'s dish-first food culture: Yank Sing har gow, Sukh Sagar dosa, Saigon Sandwich banh mi, Mission burrito war, Swan Oyster Depot.',visual:'Cover AI (Seedream 4.5): single har gow dumpling portrait, ornate SF backdrop blurred, amber/gold grade. Photo essay: Mission burrito cross-section, Tenderloin dosa, FiDi banh mi.'},
+  {slug:'article-04-two-cities',title:'Two cities, one question: what makes a dish worth remembering?',titleEm:'',template:'T41 Voices Mosaic',status:'Draft',desc:'SF + Philly paired. Shared immigrant food gravity, contrasting bread cultures, parallel seafood, shared underrated cuisines.',visual:'Hero AI: split-screen composite \u2014 Golden Gate fog / Philly rowhouse. Pair cards: 4 SF-vs-Philly dish portraits (Mission burrito/DiNic\'s pork, sourdough/hoagie roll, cioppino/raw bar, plus one more).'}
+];
+
+function buildProductionGrid() {
+  var g = document.getElementById('grid-production');
+  PRODUCTION.forEach(function(item) {
+    var path = 'production/' + item.slug + '.html';
+    var titleHtml = item.titleEm ? item.title + ' <em>\u2014 ' + item.titleEm + '</em>' : item.title;
+    var d = document.createElement('div');
+    d.className = 'pthumb';
+    d.dataset.src = path;
+    d.dataset.title = item.title + ' \u2014 ' + item.template;
+    var wrap = document.createElement('div');
+    wrap.className = 'pthumb-wrap';
+    var fr = document.createElement('iframe');
+    fr.src = path;
+    fr.loading = 'lazy';
+    wrap.appendChild(fr);
+    var body = document.createElement('div');
+    body.className = 'pthumb-body';
+    body.innerHTML =
+      '<div class="pthumb-top"><span class="pthumb-template">' + item.template + '</span><span class="pthumb-status">' + item.status + '</span></div>' +
+      '<div class="pthumb-title">' + titleHtml + '</div>' +
+      '<div class="pthumb-desc">' + item.desc + '</div>' +
+      '<div class="pthumb-visual"><strong>Visuals planned</strong>' + item.visual + '</div>';
+    d.appendChild(wrap);
+    d.appendChild(body);
+    (function(p, title) {
+      d.addEventListener('click', function() { openLightbox(p, title); });
+    })(path, d.dataset.title);
+    g.appendChild(d);
+  });
+}
+
+buildProductionGrid();
+
 function switchTab(tab) {
-  ['dish','carte'].forEach(function(t) {
+  ['dish','carte','production'].forEach(function(t) {
     document.getElementById('tab-' + t).classList.remove('active');
     document.getElementById('btn-' + t).classList.remove('active');
   });
