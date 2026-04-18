@@ -88,9 +88,9 @@ h1.article-title em{font-style:normal;color:#FA2A52}
 .hero-badge-anim .sep{color:rgba(255,255,255,.25);margin:0 4px}
 .hero-badge-anim .loc{color:#F97316}
 
-.hero-tagline{position:absolute;bottom:32px;left:36px;z-index:10;max-width:580px}
-.hero-tagline .eyebrow{font-family:monospace;font-size:10px;color:#F97316;text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin-bottom:10px;opacity:0;animation:fadeUp 1.2s ease-out .3s forwards}
-.hero-tagline .line{font-family:'Geologica',sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,30px);line-height:1.25;color:#fff;letter-spacing:-.015em;text-shadow:0 2px 20px rgba(0,0,0,.6);opacity:0;animation:fadeUp 1.2s ease-out .6s forwards}
+.hero-tagline{position:absolute;bottom:36px;left:40px;z-index:10;max-width:760px}
+.hero-tagline .eyebrow{font-family:monospace;font-size:12px;color:#F97316;text-transform:uppercase;letter-spacing:.18em;font-weight:700;margin-bottom:14px;opacity:0;animation:fadeUp 1.2s ease-out .3s forwards}
+.hero-tagline .line{font-family:'Geologica',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,46px);line-height:1.18;color:#fff;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.7);opacity:0;animation:fadeUp 1.2s ease-out .6s forwards}
 .hero-tagline .line em{font-style:normal;color:#FA2A52}
 @keyframes fadeUp{0%{opacity:0;transform:translateY(14px)}100%{opacity:1;transform:translateY(0)}}
 
@@ -98,6 +98,27 @@ h1.article-title em{font-style:normal;color:#FA2A52}
 
 /* Scroll parallax hook */
 .hero-stage.parallax .hero-photo{transform:scale(1.06) translateY(calc(var(--scroll-y,0px) * -.15))}
+
+/* === CLOSING IMAGE (signature wrap-up) === */
+.closing-stage{position:relative;margin:60px 0 40px;border-radius:18px;overflow:hidden;aspect-ratio:21/9;background:#050505;box-shadow:0 40px 100px rgba(0,0,0,.55),0 12px 36px rgba(249,115,22,.08),inset 0 0 0 1px rgba(255,255,255,.04)}
+.closing-photo{position:absolute;inset:-6%;background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=2400&q=85&auto=format&fit=crop');background-size:cover;background-position:center;animation:closingBurns 32s ease-in-out infinite;will-change:transform}
+@keyframes closingBurns{
+  0%{transform:scale(1.08) translate(1%,0)}
+  50%{transform:scale(1.16) translate(-1.5%,-1%)}
+  100%{transform:scale(1.08) translate(1%,0)}
+}
+.closing-grade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,5,2,.2) 0%,rgba(20,10,4,.05) 40%,rgba(10,2,0,.45) 100%);mix-blend-mode:multiply;pointer-events:none;z-index:1}
+.closing-accent{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 75% 60%,rgba(250,42,82,.18),transparent 60%),radial-gradient(ellipse 50% 40% at 25% 40%,rgba(249,115,22,.14),transparent 65%);mix-blend-mode:screen;pointer-events:none;z-index:2;animation:accentPulse 13s ease-in-out infinite}
+.closing-grain{position:absolute;inset:-50%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E");opacity:.3;mix-blend-mode:overlay;pointer-events:none;z-index:3;animation:grainShift 1.6s steps(4) infinite}
+.closing-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,transparent 45%,rgba(0,0,0,.5) 85%,rgba(0,0,0,.78) 100%);pointer-events:none;z-index:4}
+.closing-content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px}
+.closing-content .mark{font-family:monospace;font-size:11px;color:#FA2A52;text-transform:uppercase;letter-spacing:.2em;font-weight:700;margin-bottom:18px;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.closing-content .hook{font-family:'Geologica',sans-serif;font-weight:800;font-size:clamp(30px,4.2vw,52px);line-height:1.1;color:#fff;letter-spacing:-.025em;max-width:880px;text-shadow:0 4px 28px rgba(0,0,0,.7);margin-bottom:22px}
+.closing-content .hook em{font-style:normal;color:#FA2A52}
+.closing-content .sub{font-family:'Lora',serif;font-size:clamp(15px,1.5vw,18px);color:rgba(255,255,255,.8);max-width:620px;line-height:1.55;text-shadow:0 2px 16px rgba(0,0,0,.6);margin-bottom:28px}
+.closing-content .sig-btn{display:inline-flex;align-items:center;gap:10px;background:rgba(250,42,82,.95);color:#fff;padding:14px 28px;border-radius:100px;font-family:'Geologica',sans-serif;font-weight:800;font-size:14px;letter-spacing:.03em;box-shadow:0 12px 40px rgba(250,42,82,.4),0 2px 10px rgba(0,0,0,.3);transition:all .25s;backdrop-filter:blur(8px)}
+.closing-content .sig-btn:hover{background:#FA2A52;transform:translateY(-2px);box-shadow:0 16px 48px rgba(250,42,82,.5)}
+.closing-caption{position:absolute;bottom:20px;right:26px;z-index:11;font-family:monospace;font-size:10px;color:rgba(255,255,255,.45);letter-spacing:.1em;text-transform:uppercase}
 
 .two-col{display:grid;grid-template-columns:65fr 35fr;gap:56px;align-items:start}
 
@@ -209,7 +230,14 @@ footer a{color:#888}
   .pull-quote{padding:22px 24px;font-size:19px}
   .cta-block{padding:32px 24px}
   .cta-block h3{font-size:24px}
-  .hero-badge-anim{top:14px;left:14px;font-size:9px}
+  .hero-badge-anim{top:14px;left:14px;font-size:9px;padding:5px 12px}
+  .hero-tagline{bottom:20px;left:20px;max-width:calc(100% - 40px)}
+  .hero-tagline .eyebrow{font-size:10px;margin-bottom:8px}
+  .hero-tagline .line{font-size:22px}
+  .closing-stage{aspect-ratio:4/5}
+  .closing-content{padding:28px 20px}
+  .closing-content .hook{font-size:26px}
+  .closing-content .sub{font-size:14px}
 }
 </style>
 </head>
@@ -349,6 +377,22 @@ footer a{color:#888}
         <p><strong>Two: the score is personal.</strong> Your 92 is not your neighbor's 92. The model learns what you like — the cuisines you lean toward, the attributes you value, the price tier where your value-scoring kicks in. A 92 is a 92 for you, not for an abstract generalized eater. This is the part we think will surprise people. It shouldn't; every serious recommendation system since Spotify has worked this way. Food apps just never caught up.</p>
         <p><strong>Three: no incentives to lie.</strong> We don't take money from restaurants. We don't run ads. The beta is free. When we eventually charge — and we'll tell you when we do and why — the revenue model will not involve sponsored placements, featured results, or pay-to-play scoring. The incentive alignment is straightforward: if our scores are accurate, you use the app; if they're not, you uninstall it. We prefer to win or lose on the quality of the scoring, not on whose budget cleared last quarter.</p>
         <p>That's the pitch. We'd rather you try it than read about it.</p>
+
+        <!-- CLOSING IMAGE — signature wrap-up -->
+        <figure class="closing-stage" aria-label="ForkFox closing image — the dish, the table, the moment">
+          <div class="closing-photo" role="img" aria-label="Warm overhead food and wine scene, Louis Hansel / Unsplash"></div>
+          <div class="closing-grade"></div>
+          <div class="closing-accent"></div>
+          <div class="closing-grain"></div>
+          <div class="closing-vignette"></div>
+          <div class="closing-content">
+            <div class="mark">ForkFox · One plate at a time</div>
+            <div class="hook">Every dish gets a score. <em>Every score tells the truth.</em></div>
+            <div class="sub">We're live in San Francisco and Philadelphia. Two cities. Sixteen neighborhoods. Thousands of dishes. One honest question in front of every plate: is this actually good?</div>
+            <a href="https://forkfox.ai/#download" class="sig-btn">Open the app →</a>
+          </div>
+          <div class="closing-caption">Signature · April 2026</div>
+        </figure>
 
         <div class="cta-block">
           <h3>Try ForkFox — free iOS beta</h3>
