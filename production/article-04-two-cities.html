@@ -28,7 +28,24 @@ nav.site ul a{font-size:14px;color:#888}
 .page-wrap{max-width:920px;margin:0 auto;padding:90px 24px 60px}
 .breadcrumb{font-size:11px;color:#555;margin-bottom:18px;font-family:monospace;letter-spacing:.05em}.breadcrumb a{color:#666}.breadcrumb span{color:#FA2A52}
 
-/* === HAND-DRAWN SKETCH HERO (replaces photo) === */
+/* === HERO CITIES COMPOSITE (AI image + motion) === */
+.hero-cities{position:relative;margin:36px 0 48px;border-radius:18px;overflow:hidden;aspect-ratio:21/9;min-height:420px;background:#050505;box-shadow:0 50px 140px rgba(0,0,0,.65),0 16px 50px rgba(250,42,82,.15),inset 0 0 0 1px rgba(255,255,255,.05)}
+.hc-photo{position:absolute;inset:-5%;background-image:url('hero-cities.png');background-size:cover;background-position:center;animation:hcKenBurns 32s ease-in-out infinite;will-change:transform}
+@keyframes hcKenBurns{0%{transform:scale(1.04) translate(0,0)}25%{transform:scale(1.08) translate(-1%,-.5%)}50%{transform:scale(1.12) translate(.8%,.5%)}75%{transform:scale(1.08) translate(.5%,-.8%)}100%{transform:scale(1.04) translate(0,0)}}
+.hc-grain{position:absolute;inset:-50%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='ng'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23ng)'/%3E%3C/svg%3E");opacity:.3;mix-blend-mode:overlay;pointer-events:none;z-index:3;animation:hcGrain 1.6s steps(4) infinite}
+@keyframes hcGrain{0%{transform:translate(0,0)}25%{transform:translate(-4%,2%)}50%{transform:translate(3%,-3%)}75%{transform:translate(-2%,4%)}100%{transform:translate(0,0)}}
+.hc-shine{position:absolute;top:-20%;left:-30%;width:50%;height:140%;background:linear-gradient(115deg,transparent 30%,rgba(255,220,180,.08) 45%,rgba(255,220,180,.14) 50%,rgba(255,220,180,.08) 55%,transparent 70%);transform:rotate(18deg);pointer-events:none;z-index:4;animation:hcShine 14s ease-in-out infinite;mix-blend-mode:screen}
+@keyframes hcShine{0%,100%{transform:translateX(0) rotate(18deg);opacity:.4}50%{transform:translateX(240%) rotate(18deg);opacity:.8}}
+.hc-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.3) 100%);pointer-events:none;z-index:2}
+/* Corner mask — scrubs the small Gemini watermark star in bottom-right */
+.hc-corner-mask{position:absolute;bottom:0;right:0;width:120px;height:120px;background:radial-gradient(circle at 100% 100%,rgba(18,14,26,.96) 20%,rgba(18,14,26,.85) 45%,rgba(18,14,26,.4) 70%,transparent 100%);pointer-events:none;z-index:5;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+@media(max-width:620px){
+  .hero-cities{aspect-ratio:16/9;min-height:320px}
+  .hc-corner-mask{width:80px;height:80px}
+}
+
+/* === HAND-DRAWN SKETCH HERO (LEGACY, HIDDEN) === */
+.hero-sketch-hidden{display:none!important}
 .hero-sketch{position:relative;margin:36px 0 48px;border-radius:18px;overflow:hidden;aspect-ratio:21/9;min-height:420px;background:#0a0a0a;display:grid;grid-template-columns:1fr 2px 1fr;box-shadow:0 50px 140px rgba(0,0,0,.65),0 16px 50px rgba(250,42,82,.15),inset 0 0 0 1px rgba(255,255,255,.05)}
 .hero-sketch .hs-wash{position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 25% 40%,rgba(250,42,82,.16),transparent 60%),radial-gradient(ellipse 55% 70% at 75% 55%,rgba(249,115,22,.14),transparent 60%);pointer-events:none;z-index:0;animation:heroWash 12s ease-in-out infinite}
 @keyframes heroWash{0%,100%{opacity:.8}50%{opacity:1}}
@@ -242,7 +259,16 @@ footer a{color:#888}
 <div class="page-wrap">
   <nav class="breadcrumb"><a href="https://forkfox.ai/">Home</a> / <a href="https://forkfox.ai/the-dish">The Dish</a> / <span>Two cities, one question</span></nav>
 
-  <figure class="hero-sketch" aria-label="Hand-drawn split hero — San Francisco + Philadelphia">
+  <figure class="hero-cities" aria-label="San Francisco + Philadelphia composite — Two cities, one question">
+    <div class="hc-photo" role="img" aria-label="Golden Gate Bridge and Philadelphia skyline composite"></div>
+    <div class="hc-grain"></div>
+    <div class="hc-corner-mask"></div>
+    <div class="hc-shine"></div>
+    <div class="hc-vignette"></div>
+  </figure>
+
+  <!-- OLD SKETCH BELOW IS HIDDEN; keeping markup as backup but display:none-ed via CSS -->
+  <figure class="hero-sketch-hidden" aria-hidden="true" style="display:none">
     <div class="hs-wash"></div>
     <div class="hs-grain"></div>
 
