@@ -52,7 +52,7 @@ h1.article-title em{font-style:italic;color:#F97316;font-weight:700}
 .mag-byline .author{color:#e0d0a0;font-weight:600}.mag-byline .sep{color:#4a3a1a}
 
 /* CLOSING */
-.closing-stage{position:relative;margin:60px 0 40px;border-radius:18px;overflow:hidden;aspect-ratio:21/9;background:#050505;box-shadow:0 40px 100px rgba(0,0,0,.6),0 12px 36px rgba(249,115,22,.12),inset 0 0 0 1px rgba(255,255,255,.04)}
+.closing-stage{position:relative;margin:60px 0 40px;border-radius:18px;overflow:hidden;aspect-ratio:16/9;min-height:520px;background:#050505;box-shadow:0 40px 100px rgba(0,0,0,.6),0 12px 36px rgba(249,115,22,.12),inset 0 0 0 1px rgba(255,255,255,.04)}
 .closing-photo{position:absolute;inset:-6%;background-image:url('https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=2400&q=85&auto=format&fit=crop');background-size:cover;background-position:center;animation:closingBurns 32s ease-in-out infinite;will-change:transform}
 @keyframes closingBurns{0%{transform:scale(1.08) translate(1%,0)}50%{transform:scale(1.18) translate(-1.5%,-1%)}100%{transform:scale(1.08) translate(1%,0)}}
 .closing-grade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,5,2,.2) 0%,rgba(20,10,4,.05) 40%,rgba(10,2,0,.5) 100%);mix-blend-mode:multiply;pointer-events:none;z-index:1}
@@ -211,11 +211,23 @@ footer a{color:#8a7a5a}
     <div class="faq-item"><div class="faq-q">Is SF Indian food underrated?</div><div class="faq-a">The Tenderloin's South Indian corridor specifically — yes. Most food maps of SF skip that block entirely, and they are missing dosas that would be headlines in any other American city.</div></div>
   </section>
 
-  <aside class="cta-block">
-    <h3>Score your next SF plate</h3>
-    <p>Free iOS beta. Live across San Francisco. TestFlight invite within 24 hours.</p>
-    <a href="https://forkfox.ai/#download" class="btn">Join the beta →</a>
-  </aside>
+  <aside class="beta-signup">
+  <div class="beta-backdrop"></div>
+  <div class="beta-shine"></div>
+  <div class="beta-content">
+    <div class="beta-eyebrow"><span class="dot"></span>iOS Beta · Free · SF + Philly</div>
+    <h3 class="beta-title">Score your next SF plate.</h3>
+    <p class="beta-sub">We'll send you a TestFlight invite within 24 hours. Free for everyone during beta.</p>
+    <form class="beta-form" action="https://formsubmit.co/hello@forkfox.ai" method="POST">
+      <input type="hidden" name="_subject" value="ForkFox iOS Beta Signup (The Dish — SF)">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://forkfox.ai/the-dish/">
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <button type="submit">Join →</button>
+    </form>
+    <div class="beta-fine">iOS only · Free during beta · No spam</div>
+  </div>
+</aside>
 
   <section class="related">
     <h3>Related reads</h3>
@@ -230,7 +242,7 @@ footer a{color:#8a7a5a}
 
 <footer>
   <p>ForkFox · <a href="https://forkfox.ai/the-dish">The Dish</a> · <a href="https://forkfox.ai/carte">Carte</a> · <a href="https://forkfox.ai/privacy">Privacy</a> · <a href="https://forkfox.ai/support">Support</a></p>
-  <p style="margin-top:10px">&copy; 2026 ForkFox. Patent pending.</p>
+  <p style="margin-top:10px">&copy; 2026 ForkFox. </p>
 </footer>
 
 <script>

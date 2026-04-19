@@ -66,7 +66,7 @@ h1.article-title em{font-style:normal;color:#FA2A52}
 .hero-stage.parallax .hero-photo{transform:scale(1.06) translateY(calc(var(--scroll-y,0px) * -.15))}
 
 /* CLOSING */
-.closing-stage{position:relative;margin:60px 0 40px;border-radius:18px;overflow:hidden;aspect-ratio:21/9;background:#050505;box-shadow:0 40px 100px rgba(0,0,0,.55),0 12px 36px rgba(249,115,22,.08),inset 0 0 0 1px rgba(255,255,255,.04)}
+.closing-stage{position:relative;margin:60px 0 40px;border-radius:18px;overflow:hidden;aspect-ratio:16/9;min-height:520px;background:#050505;box-shadow:0 40px 100px rgba(0,0,0,.55),0 12px 36px rgba(249,115,22,.08),inset 0 0 0 1px rgba(255,255,255,.04)}
 .closing-photo{position:absolute;inset:-6%;background-image:url('https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=2400&q=85&auto=format&fit=crop');background-size:cover;background-position:center;animation:closingBurns 32s ease-in-out infinite;will-change:transform}
 @keyframes closingBurns{0%{transform:scale(1.08) translate(1%,0)}50%{transform:scale(1.16) translate(-1.5%,-1%)}100%{transform:scale(1.08) translate(1%,0)}}
 .closing-grade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,5,2,.2) 0%,rgba(20,10,4,.05) 40%,rgba(10,2,0,.45) 100%);mix-blend-mode:multiply;pointer-events:none;z-index:1}
@@ -97,22 +97,6 @@ h1.article-title em{font-style:normal;color:#FA2A52}
 
 .pull-quote{margin:44px 0;padding:32px 36px;background:linear-gradient(135deg,rgba(250,42,82,.09),rgba(249,115,22,.04));border-left:3px solid #FA2A52;border-radius:0 14px 14px 0;font-family:'Geologica',sans-serif;font-weight:600;font-size:24px;line-height:1.4;color:#fff;letter-spacing:-.01em}
 .pull-quote::before{content:'"';color:#FA2A52;font-size:54px;line-height:0;vertical-align:-28px;margin-right:8px}
-
-/* === 5-ATTRIBUTE CUSTOM SVG BREAKDOWN === */
-.attr-viz{margin:48px 0;padding:36px;background:#0d0d0d;border:1px solid #1a1a1a;border-radius:16px;position:relative;overflow:hidden}
-.attr-viz::before{content:'';position:absolute;top:-30%;right:-15%;width:50%;height:160%;background:radial-gradient(circle,rgba(250,42,82,.05),transparent 60%);pointer-events:none}
-.attr-viz h3{font-family:'Geologica',sans-serif;font-weight:800;font-size:22px;color:#fff;margin-bottom:8px;letter-spacing:-.01em;position:relative}
-.attr-viz .sub{font-size:13px;color:#888;margin-bottom:28px;font-family:'Inter',sans-serif;position:relative}
-.attr-list{display:flex;flex-direction:column;gap:18px;position:relative}
-.attr-row{display:grid;grid-template-columns:140px 1fr 50px;gap:18px;align-items:center}
-.attr-name{font-family:'Geologica',sans-serif;font-weight:700;font-size:15px;color:#fff;text-transform:uppercase;letter-spacing:.06em}
-.attr-bar{height:10px;background:#1a1a1a;border-radius:6px;overflow:hidden;position:relative}
-.attr-fill{height:100%;background:linear-gradient(90deg,#FA2A52,#F97316);border-radius:6px;position:relative;animation:barFill 1.8s cubic-bezier(.65,0,.35,1) forwards;transform-origin:left;transform:scaleX(0)}
-@keyframes barFill{to{transform:scaleX(1)}}
-.attr-fill::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:barShine 2.8s ease-in-out infinite}
-@keyframes barShine{0%,100%{transform:translateX(-100%)}50%{transform:translateX(100%)}}
-.attr-score{font-family:'Geologica',sans-serif;font-weight:900;font-size:20px;color:#FA2A52;text-align:right}
-.attr-desc{grid-column:1/-1;font-size:13px;color:#999;padding-left:158px;line-height:1.6;font-family:'Inter',sans-serif;margin-top:-6px}
 
 .faq{margin:60px 0}
 .faq-title{font-family:'Geologica',sans-serif;font-weight:800;font-size:30px;color:#fff;margin-bottom:26px;letter-spacing:-.01em}
@@ -204,45 +188,7 @@ footer a{color:#888}
 
         <h2 id="what-a-score-measures">What a dish score actually measures</h2>
         <p>Scoring plates is harder than scoring rooms, which is the polite way of saying this is why nobody has done it yet. A room is a fuzzy average — a kind of vibe. A plate is specific. A plate is either good or it's not. And our judgment about whether a plate is good isn't one judgment, it's at least five, and they don't always agree.</p>
-        <p>ForkFox measures five things per dish. Each has its own floor, ceiling, and weighting logic by cuisine. Each can be wrong in interesting ways and right in uninteresting ones. The combined score is a 0-to-100 that's calibrated per user — your 92 is not your cousin's 92 — but the attributes themselves are what the algorithm actually cares about.</p>
-        <p>Here is the breakdown.</p>
-
-        <div class="attr-viz">
-          <h3>The five attributes</h3>
-          <p class="sub">What the algorithm is actually measuring, every time a plate gets a score.</p>
-          <div class="attr-list">
-            <div class="attr-row">
-              <div class="attr-name">Flavor</div>
-              <div class="attr-bar"><div class="attr-fill" style="width:94%;animation-delay:.2s"></div></div>
-              <div class="attr-score">94</div>
-              <div class="attr-desc">Does the plate taste like it's supposed to taste? Weighted against the cuisine's canonical version — a pho that's only as flavorful as the broth the pot next door uses is an 82, not a 92.</div>
-            </div>
-            <div class="attr-row">
-              <div class="attr-name">Texture</div>
-              <div class="attr-bar"><div class="attr-fill" style="width:88%;animation-delay:.4s"></div></div>
-              <div class="attr-score">88</div>
-              <div class="attr-desc">Mouthfeel, bite, technical precision. The snap of a dumpling skin, the sear on a steak, the spring of a noodle. Texture separates the pros from the enthusiasts faster than flavor does.</div>
-            </div>
-            <div class="attr-row">
-              <div class="attr-name">Value</div>
-              <div class="attr-bar"><div class="attr-fill" style="width:91%;animation-delay:.6s"></div></div>
-              <div class="attr-score">91</div>
-              <div class="attr-desc">Price relative to the other four attributes. A $3 taco that scores 92 on flavor is a higher value plate than a $38 entrée that scores 85. This is where taquerías quietly outperform their Michelin neighbors.</div>
-            </div>
-            <div class="attr-row">
-              <div class="attr-name">Execution</div>
-              <div class="attr-bar"><div class="attr-fill" style="width:85%;animation-delay:.8s"></div></div>
-              <div class="attr-score">85</div>
-              <div class="attr-desc">Consistency across visits. A plate that's a 94 once and a 71 the next time is not a 94 plate. We weight execution heavier for cuisines with high technical floors — ramen, sushi, omakase, Neapolitan pizza.</div>
-            </div>
-            <div class="attr-row">
-              <div class="attr-name">Context</div>
-              <div class="attr-bar"><div class="attr-fill" style="width:79%;animation-delay:1s"></div></div>
-              <div class="attr-score">79</div>
-              <div class="attr-desc">Is this plate a credible expression of its cuisine? Is the cassoulet made like a cassoulet, or is it a stew with white beans? Context is the hardest to score automatically and the most important to get right.</div>
-            </div>
-          </div>
-        </div>
+        <p>ForkFox looks at a set of sensory and contextual signals for each plate — the way the kitchen handles the technical stuff, how the plate compares to its cuisine’s canonical version, whether the price lines up with what’s on the plate. The algorithm combines them into a score out of 100 and calibrates that score to your taste.</p></div>
 
         <p>Those five numbers feed a combined score. The combination is not a simple average — it's a weighted formula that shifts by cuisine. Flavor and execution carry more weight for technical-floor cuisines; texture and context carry more for regional and hyperlocal cuisines; value stays constant across all of them, because nobody's price tolerance changes based on what they ordered.</p>
 
@@ -276,17 +222,29 @@ footer a{color:#888}
           <div class="closing-caption">Signature · concept</div>
         </figure>
 
-        <div class="cta-block">
-          <h3>Score your next meal</h3>
-          <p>Free iOS beta. TestFlight invite within 24 hours. Live across San Francisco and Philadelphia.</p>
-          <a href="https://forkfox.ai/#download" class="btn">Join the beta →</a>
-        </div>
+        <aside class="beta-signup">
+  <div class="beta-backdrop"></div>
+  <div class="beta-shine"></div>
+  <div class="beta-content">
+    <div class="beta-eyebrow"><span class="dot"></span>iOS Beta · Free · SF + Philly</div>
+    <h3 class="beta-title">Score your next plate with us.</h3>
+    <p class="beta-sub">We'll send you a TestFlight invite within 24 hours. Free for everyone during beta.</p>
+    <form class="beta-form" action="https://formsubmit.co/hello@forkfox.ai" method="POST">
+      <input type="hidden" name="_subject" value="ForkFox iOS Beta Signup (The Dish — Concept)">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://forkfox.ai/the-dish/">
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <button type="submit">Join →</button>
+    </form>
+    <div class="beta-fine">iOS only · Free during beta · No spam</div>
+  </div>
+</aside>
       </article>
 
       <section class="faq">
         <h2 class="faq-title">Frequently asked</h2>
         <div class="faq-item"><div class="faq-q">Why dishes instead of restaurants?</div><div class="faq-a">Because you eat dishes, not restaurants. A venue rating averages the room, the service, and a dozen plates you'll never order. The plate is the unit you remember. That's the unit we score.</div></div>
-        <div class="faq-item"><div class="faq-q">How does the scoring actually work?</div><div class="faq-a">Five attributes — flavor, texture, value, execution, context — each scored from aggregated review data, weighted by cuisine, combined into a 0-to-100 personalized to your taste profile.</div></div>
+        <div class="faq-item"><div class="faq-q">How does the scoring actually work?</div><div class="faq-a">Five attributes — several sensory and contextual attributes — each scored from aggregated review data combined into a 0-to-100 personalized to your taste profile.</div></div>
         <div class="faq-item"><div class="faq-q">What counts as "execution"?</div><div class="faq-a">Consistency across visits, technical competence, how close the plate lands on a repeatable version of itself. We weight it higher for cuisines with high technical floors like ramen, sushi, and Neapolitan pizza.</div></div>
         <div class="faq-item"><div class="faq-q">How is this different from Yelp or Google?</div><div class="faq-a">Those rank places. We rank plates. A 4-star restaurant in our system might have one 94-scoring dish and one 62-scoring dish on the same menu — and we'll tell you which is which.</div></div>
         <div class="faq-item"><div class="faq-q">Does the algorithm get dishes wrong?</div><div class="faq-a">Yes. It's in beta. Every correction a user submits trains the model. The app is built to learn in public. If it scores a plate wrong, we want to know.</div></div>
@@ -327,7 +285,7 @@ footer a{color:#888}
 
 <footer>
   <p>ForkFox · <a href="https://forkfox.ai/the-dish">The Dish</a> · <a href="https://forkfox.ai/carte">Carte</a> · <a href="https://forkfox.ai/privacy">Privacy</a> · <a href="https://forkfox.ai/support">Support</a></p>
-  <p style="margin-top:10px">&copy; 2026 ForkFox. Patent pending.</p>
+  <p style="margin-top:10px">&copy; 2026 ForkFox. </p>
 </footer>
 
 <script>
@@ -335,6 +293,6 @@ footer a{color:#888}
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How ForkFox Sees a City","description":"A 4.6-star restaurant can serve a 6-out-of-10 biryani. Here's why ForkFox scores dishes, not dinners.","image":"https://forkfox.ai/the-dish/how-forkfox-sees-a-city/og.jpg","datePublished":"2026-04-22","dateModified":"2026-04-22","author":{"@type":"Person","name":"ForkFox Team"},"publisher":{"@type":"Organization","name":"ForkFox","logo":{"@type":"ImageObject","url":"https://forkfox.ai/forkfox-logo.png"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://forkfox.ai/"},{"@type":"ListItem","position":2,"name":"The Dish","item":"https://forkfox.ai/the-dish/"},{"@type":"ListItem","position":3,"name":"How ForkFox Sees a City","item":"https://forkfox.ai/the-dish/how-forkfox-sees-a-city/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why dishes instead of restaurants?","acceptedAnswer":{"@type":"Answer","text":"Because you eat dishes, not restaurants. A venue rating averages the room, the service, and a dozen plates you'll never order."}},{"@type":"Question","name":"How does the scoring actually work?","acceptedAnswer":{"@type":"Answer","text":"Five attributes — flavor, texture, value, execution, context — each scored from aggregated review data, weighted by cuisine, combined into a 0-to-100 personalized to your taste profile."}},{"@type":"Question","name":"How is this different from Yelp or Google?","acceptedAnswer":{"@type":"Answer","text":"Those rank places. We rank plates."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why dishes instead of restaurants?","acceptedAnswer":{"@type":"Answer","text":"Because you eat dishes, not restaurants. A venue rating averages the room, the service, and a dozen plates you'll never order."}},{"@type":"Question","name":"How does the scoring actually work?","acceptedAnswer":{"@type":"Answer","text":"Five attributes — several sensory and contextual attributes — each scored from aggregated review data combined into a 0-to-100 personalized to your taste profile."}},{"@type":"Question","name":"How is this different from Yelp or Google?","acceptedAnswer":{"@type":"Answer","text":"Those rank places. We rank plates."}}]}</script>
 </body>
 </html>

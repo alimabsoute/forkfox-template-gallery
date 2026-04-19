@@ -151,7 +151,7 @@ h1.article-title em{font-style:normal;color:#FA2A52}
 .pull-quote::before{content:'"';color:#FA2A52;margin-right:6px}
 
 /* CLOSING */
-.closing-stage{position:relative;margin:52px 0 36px;border-radius:18px;overflow:hidden;aspect-ratio:21/9;background:#050505;box-shadow:0 40px 100px rgba(0,0,0,.6),0 12px 36px rgba(249,115,22,.1)}
+.closing-stage{position:relative;margin:52px 0 36px;border-radius:18px;overflow:hidden;aspect-ratio:16/9;min-height:500px;background:#050505;box-shadow:0 40px 100px rgba(0,0,0,.6),0 12px 36px rgba(249,115,22,.1)}
 .closing-photo{position:absolute;inset:-6%;background-image:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=2400&q=85&auto=format&fit=crop');background-size:cover;background-position:center;animation:closingBurns 32s ease-in-out infinite}
 @keyframes closingBurns{0%{transform:scale(1.08) translate(1%,0)}50%{transform:scale(1.16) translate(-1.5%,-1%)}100%{transform:scale(1.08) translate(1%,0)}}
 .closing-grade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,5,2,.25) 0%,rgba(10,2,0,.45) 100%);mix-blend-mode:multiply;pointer-events:none;z-index:1}
@@ -372,11 +372,23 @@ footer a{color:#888}
     <div class="faq-item"><div class="faq-q">Where should I start if I only have one weekend in each city?</div><div class="faq-a">SF: breakfast at Tartine, dim sum at Yank Sing, Mission burrito dinner. Philly: DiNic's roast pork, Italian Market Vietnamese lunch, Fishtown BYOB dinner.</div></div>
   </section>
 
-  <aside class="cta-block">
-    <h3>Eat both cities with us</h3>
-    <p>ForkFox is live in San Francisco and Philadelphia. Free iOS beta.</p>
-    <a href="https://forkfox.ai/#download" class="btn">Join the beta →</a>
-  </aside>
+  <aside class="beta-signup">
+  <div class="beta-backdrop"></div>
+  <div class="beta-shine"></div>
+  <div class="beta-content">
+    <div class="beta-eyebrow"><span class="dot"></span>iOS Beta · Free · SF + Philly</div>
+    <h3 class="beta-title">Eat both cities with us.</h3>
+    <p class="beta-sub">We'll send you a TestFlight invite within 24 hours. Free for everyone during beta.</p>
+    <form class="beta-form" action="https://formsubmit.co/hello@forkfox.ai" method="POST">
+      <input type="hidden" name="_subject" value="ForkFox iOS Beta Signup (The Dish — Compare)">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://forkfox.ai/the-dish/">
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <button type="submit">Join →</button>
+    </form>
+    <div class="beta-fine">iOS only · Free during beta · No spam</div>
+  </div>
+</aside>
 
   <section class="related">
     <h3>Related reads</h3>
@@ -391,7 +403,7 @@ footer a{color:#888}
 
 <footer>
   <p>ForkFox · <a href="https://forkfox.ai/the-dish">The Dish</a> · <a href="https://forkfox.ai/carte">Carte</a> · <a href="https://forkfox.ai/privacy">Privacy</a> · <a href="https://forkfox.ai/support">Support</a></p>
-  <p style="margin-top:10px">&copy; 2026 ForkFox. Patent pending.</p>
+  <p style="margin-top:10px">&copy; 2026 ForkFox. </p>
 </footer>
 
 <script>
